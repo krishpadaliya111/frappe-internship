@@ -1,2 +1,1 @@
-# frappe-internship
-my frappe internship
+my frappe internship repo
