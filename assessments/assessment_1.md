@@ -288,6 +288,12 @@ The loop stops when the number becomes 100 or greater.
 
 
 
+8. Document each step you took to install Frappe bench, including issues and fixes.
+9. Show output of `bench start` and `bench new-site` (screenshot) and explain what each did.
+Answer: Question 8,9 are not assigned in task.
+
+
+
 10. Write a SQL query joining your students, subjects, and marks tables to list each student's average mark.
 
 Answer:
