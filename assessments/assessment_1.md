@@ -1,264 +1,376 @@
+ASSESSMENT-1
+
 1. Describe the difference between mutable and immutable types in Python, with examples.
 
 Answer:
 
-In Python, objects are classified into mutable and immutable types.
+In Python, every value is stored as an object. These objects are mainly divided into mutable and immutable types based on whether their contents can be changed after they are created.
 
-Mutable Objects
+Mutable Types
+A mutable object is one whose data can be modified after it is created. When we change a mutable object, Python updates the existing object instead of creating a new one.
 
-A mutable object can be changed after it is created without creating a new object.
+Common mutable data types are:
+•	List (list) 
+•	Dictionary (dict) 
+•	Set (set) 
+•	Bytearray (bytearray) 
 
-Examples of mutable types:
-
-List (list)
-Dictionary (dict)
-Set (set)
-
-Example:
+Example
 
 numbers = [10, 20, 30]
 
 numbers.append(40)
 
-print(numbers)
+print(numbers)	
 
-Output:
-
+Output
 [10, 20, 30, 40]
 
-The original list is modified by adding a new element.
+Here, the original list is modified by adding a new element. Python does not create another list; it updates the existing one.
 
-Immutable Objects
+Real-life Use of Mutable Types
+Suppose you are building an attendance management system.
+Initially, today's attendance list is empty.
 
-An immutable object cannot be changed after it is created. Any modification creates a new object.
+attendance = []
 
-Examples of immutable types:
+As students arrive, you keep adding their names.
 
-Integer (int)
-Float (float)
-String (str)
-Tuple (tuple)
-Boolean (bool)
+attendance.append("Krish")
 
-Example:
+attendance.append("Rahul")
 
-name = "abc"
+attendance.append("Priya")
 
-name = name + " def"
+Since the attendance keeps changing throughout the day, using a list (mutable) is the correct choice.
+
+Immutable Types
+An immutable object cannot be modified after it is created. If we try to change its value, Python creates a completely new object instead of modifying the existing one.
+
+Common immutable data types are:
+•	Integer (int) 
+•	Float (float) 
+•	String (str) 
+•	Tuple (tuple) 
+•	Boolean (bool) 
+
+Example
+
+name = "Krish"
+
+name = name + " Padaliya"
 
 print(name)
 
-Output:
+Output
+Krish Padaliya
+Although it appears that the string was modified, Python actually creates a new string object because strings are immutable.
 
-abc def
+Real-life Use of Immutable Types
+Consider an Aadhaar Number, PAN Number, or Student Roll Number.
+Once these values are assigned, they should never change accidentally.
 
-A new string object is created instead of modifying the original string.
+Example:
 
+roll_number = "CE23045"
+
+Keeping such values immutable makes the program safer because no part of the code can accidentally modify them.
 
 
 2. Write a Python program to check whether a number is a palindrome.
 
-Answer:
+Answer
+
+A palindrome is a number or word that remains the same when read from left to right or right to left.
+
+Examples:
+121
+1331
+4554
+These are palindrome numbers because reversing them gives the same number.
+
+Python Program
 
 number = input("Enter a number: ")
 
 reverse = number[::-1]
 
 if number == reverse:
+
     print("The number is a palindrome.")
+
 else:
+
     print("The number is not a palindrome.")
 
-Sample Output:
+Sample Output
+
 Enter a number: 121
 
 The number is a palindrome.
 
-Explanation:
-
-The user enters a number.
-The string slicing [::-1] reverses the number.
-If the original number and reversed number are the same, it is a palindrome.
-
+Real-life Use
+Palindrome checking is not only used in interview questions. Similar logic is useful in:
+•	Data validation 
+•	Pattern recognition 
+•	String processing 
+•	Basic cryptography practice 
+•	Competitive programming 
+It also helps beginners understand string manipulation, comparison, and conditional statements.
 
 
 3. What is a Python decorator? Provide and explain one example.
 
-Answer:
+Answer
 
-A decorator is a special function in Python that adds extra functionality to another function or method without changing its original code.
-
+A decorator is a special feature in Python that allows us to add extra functionality to a function or method without changing its original code.
+Instead of modifying the original function, a decorator wraps it and performs additional work before or after the function executes.
 Decorators are written using the @ symbol.
 
-One commonly used decorator is @property, which allows a method to be accessed like an attribute.
+Why are decorators useful?
+Suppose many functions need to perform the same task before running, such as:
+•	Checking user login 
+•	Measuring execution time 
+•	Printing logs 
+•	Validating input 
+Instead of writing the same code inside every function, we can write one decorator and reuse it.
 
-Example:
+Example using @property
 
 class Student:
 
     def __init__(self, name):
+
         self._name = name
 
     @property
+
     def name(self):
+
         return self._name
 
-student = Student("abc")
+student = Student("Krish")
 
 print(student.name)
 
-Output:
-abc
+
+Output
+Krish
 
 Explanation
-@property converts the name() method into a property.
-Instead of writing student.name(), we simply write student.name.
-This improves readability and allows controlled access to object data.
+Normally, we call methods using parentheses.
 
+Example
 
+student.name()
+
+But because of the @property decorator, we can access it like an attribute.
+
+student.name
+
+This makes the code more readable while still allowing the class to control how the value is accessed.
+
+Real-life Use
+Suppose you are building an Employee Management System.
+Each employee has a salary.
+You want users to read the salary like this:
+employee.salary
+instead of
+employee.get_salary()
+Using @property makes the code cleaner while still allowing you to perform validation or calculations in the background.
 
 4. Explain the purpose of __init__ in a Python class.
 
-Answer:
+Answer
 
-The __init__() method is a special method in Python known as the constructor. It is automatically called whenever a new object of a class is created.
-
+The __init__() method is a special method in Python called the constructor.
+It is automatically executed whenever a new object of a class is created.
 Its main purpose is to initialize the object's attributes with the values provided during object creation.
-
-Example:
+	
+Example
 
 class Student:
 
     def __init__(self, name, age):
+
         self.name = name
+ 
         self.age = age
-student = Student("abc", 21)
+
+student = Student("Krish", 21)
 
 print(student.name)
 
 print(student.age)
 
-Output:
-abc
+Output
+Krish
 21
 
-Explanation
-__init__() is automatically executed when Student("abc", 21) is called.
-It initializes the object's attributes (name and age).
-This ensures every object starts with the required data.
+Real-life Use
+Imagine an online shopping application.
+Every product has:
+•	Product ID 
+•	Product Name 
+•	Price 
+Instead of assigning these values one by one after creating the object, we initialize them immediately.
 
+5. Difference between a List and a Tuple — When Would You Use Each?
 
+Answer
 
-5. Difference between a list and a tuple — when would you use each?
-
-Answer:
-
-Both lists and tuples are used to store multiple items in Python, but they have some important differences.
-
+In Python, both lists and tuples are data structures used to store multiple values in a single variable. They can store different types of data such as integers, strings, or even other lists. The main difference between them is whether their contents can be changed after creation.
 List
-A list is mutable, which means its elements can be changed after it is created.
-Lists use square brackets [].
-Use a list when you need to add, remove, or modify items.
+A list is a mutable data type, which means its elements can be added, removed, or modified after the list is created.
+Lists are created using square brackets [].
 
-Example:
+
+Example
 
 fruits = ["Apple", "Banana", "Mango"]
 
 fruits.append("Orange")
 
+fruits[0] = "Grapes"
+
 print(fruits)
 
-Output:
+Output
 
-['Apple', 'Banana', 'Mango', 'Orange']
+['Grapes', 'Banana', 'Mango', 'Orange']
+
+In this example, a new fruit is added and the first fruit is changed. This is possible because lists are mutable.
+When to Use a List
+Lists are useful when the data changes frequently.
+For example:
+•	Shopping cart items in an e-commerce application. 
+•	Student attendance records. 
+•	Tasks in a to-do list. 
+•	Chat messages in a messaging application. 
+If users need to add or remove information, a list is usually the best choice
 
 Tuple
-A tuple is immutable, which means its elements cannot be changed after it is created.
-Tuples use parentheses ().
-Use a tuple when the data should remain constant.
+A tuple is an immutable data type, which means its elements cannot be modified after it is created.
+Tuples are created using parentheses ().
 
-Example:
+Example
 
-colors = ("Red", "Green", "Blue")
+student = ("Krish", 21, "Computer Engineering")
 
-print(colors)
+print(student)
 
-Output:
+Once the tuple is created, its values cannot be changed.
 
-('Red', 'Green', 'Blue')
+If we try:
 
+student[0] = "Rahul"
+
+Python will generate an error because tuples are immutable.
+
+When to Use a Tuple
+Tuples are useful when the data should remain fixed throughout the program.
+Examples include:
+•	Student Roll Number 
+•	Date of Birth 
+•	GPS Coordinates 
+•	RGB Color Values 
+•	Database records that should not be modified accidentally 
+Using tuples prevents accidental modification of important information.
+
+Real-Life Example
+Imagine you are developing a college management system.
+The list of students attending today's lecture changes as students arrive.
+attendance = ["Krish", "Rahul"]
+attendance.append("Priya")
+A list is appropriate because attendance changes.
+Now consider a student's roll number:
+roll_number = ("CE23045")
+A roll number should never change after it is assigned, so immutable data is more appropriate.
 
 
 6. Explain var vs let vs const in JavaScript with examples.
 
-Answer:
+Answer
 
-In JavaScript, var, let, and const are used to declare variables.
+In JavaScript, var, let, and const are keywords used to declare variables. Although all three store data, they differ in scope, reassignment rules, and modern usage.
 
 var
-Old way of declaring variables.
-Can be reassigned.
-Function-scoped.
+var is the traditional way of declaring variables in JavaScript.
+Characteristics:
+•	Function-scoped 
+•	Can be reassigned 
+•	Can be redeclared 
 
-Example:
+Example
 
-var name = "abc";
+var name = "Krish";
 
-name = "defg";
+name = "Rahul";
 
 console.log(name);
 
-Output:
-
-defg
-
+Output
+Rahul
 
 let
-Modern way to declare variables.
-Can be reassigned.
-Block-scoped.
+let was introduced in ES6 (ECMAScript 2015).
+Characteristics:
+•	Block-scoped 
+•	Can be reassigned 
+•	Cannot be redeclared in the same scope 
 
-Example:
+Example
 
-let age = 20;
+let marks = 85;
 
-age = 21;
+marks = 92;
 
-console.log(age);
+console.log(marks);
 
-Output:
-
-21
+Output
+92
 
 const
-Used for values that should not be reassigned.
-Block-scoped.
-Must be initialized when declared.
+const is also block-scoped but cannot be reassigned after declaration.
+Characteristics:
+•	Block-scoped 
+•	Cannot be reassigned 
+•	Must be initialized during declaration
 
-Example:
+Example
 
-const country = "India";
+const college = "ABC Engineering College";
 
-console.log(country);
+console.log(college);
 
-Output:
+Output
+ABC Engineering College
 
-India
+Attempting to change it:
+college = "XYZ College";
+will produce an error.
 
+Real-Life Use
+Suppose you are creating an online shopping website.
+The customer's name may change during editing.
+let customerName = "Krish";
+The GST percentage usually remains constant.
+const GST = 18;
 
 
 7. Write a for loop printing even numbers 1–10, and a while loop that doubles from 1 until ≥ 100.
 
-Answer:
+Answer
+
 (a) for Loop
 
 print("Even numbers from 1 to 10:")
 
-for i in range(2, 11, 2):
+for number in range(2, 11, 2):
 
-    print(i)
+    print(number)
 
-Output:
+Output
 
 Even numbers from 1 to 10:
 2
@@ -267,20 +379,37 @@ Even numbers from 1 to 10:
 8
 10
 
+Explanation
+The range(2, 11, 2) function means:
+•	Start from 2 
+•	Continue until 10 
+•	Increase by 2 each time 
+Therefore, only even numbers are printed.
+
+Real-Life Use
+A for loop is useful when we know in advance how many times we need to repeat a task.
+
+
+
+Examples include:
+•	Displaying all students in a classroom. 
+•	Printing marks of every subject. 
+•	Showing products in an online shopping website. 
+•	Processing every row in a database table.
+
 (b) while Loop
 
 number = 1
 
 while number < 100:
-   
+
     print(number)
-   
+
     number = number * 2
 
 print(number)
 
-Output:
-
+Output
 1
 2
 4
@@ -290,57 +419,92 @@ Output:
 64
 128
 
-Explanation:
+Explanation
+The loop starts with the value 1.
+Each iteration doubles the value.
+The loop continues until the value becomes 100 or greater.
 
-The loop starts from 1.
-Each iteration doubles the number.
-The loop stops when the number becomes 100 or greater.
-
-
+Real-Life Use
+A while loop is useful when the number of repetitions is not known in advance.
+Examples include:
+•	Reading data until the user chooses to exit. 
+•	ATM PIN verification. 
+•	Login systems. 
+•	Menu-driven applications. 
+•	Waiting for a network response.
 
 8. Document each step you took to install Frappe bench, including issues and fixes.
+
 9. Show output of `bench start` and `bench new-site` (screenshot) and explain what each did.
 
-Answer: Question 8,9 are not assigned in task.
-
-
+Answer Question 8,9 are not assigned in task.
 
 10. Write a SQL query joining your students, subjects, and marks tables to list each student's average mark.
 
-Answer:
+Answer
 
 SELECT
-   
+
     students.student_name,
-   
+
     AVG(marks.marks) AS average_marks
 
-FROM marks
+FROM students
 
-JOIN students
+JOIN marks
 
-ON students.student_id = marks.student_id
+    ON students.student_id = marks.student_id
 
 JOIN subjects
 
-ON subjects.subject_id = marks.subject_id
+    ON marks.subject_id = subjects.subject_id
 
 GROUP BY students.student_name;
 
+Explanation
+SELECT
+SELECT students.student_name,
+       AVG(marks.marks)
+This selects:
+•	Student name 
+•	Average marks 
+JOIN
+The JOIN keyword combines related data from different tables.
+In this query:
+•	The students table provides student names. 
+•	The marks table provides marks. 
+•	The subjects table connects subjects with marks. 
+Although the average calculation only needs names and marks, joining the subjects table demonstrates how all three related tables work together.
 
-Sample Output:
-+--------------+---------------+
-| student_name | average_marks |
-+--------------+---------------+
-| abc         | 89.00         |
-| defg        | 78.50         |
-| hij         | 95.00         |
-+--------------+---------------+
+AVG()
+AVG() is an aggregate function.
+It calculates the average of all marks belonging to each student.
 
-Explanation:
+Example:
+Marks:
+90
+88
+Average:
+89
 
-JOIN combines data from the students, subjects, and marks tables.
+GROUP BY
+GROUP BY students.student_name;
 
-AVG() calculates the average marks for each student.
+This groups all records belonging to the same student before calculating the average.
+Without GROUP BY, SQL would try to calculate one average for the entire table instead of one average per student.
 
-GROUP BY groups the records by student name so the average is calculated separately for each student.
+Sample Output
+Student Name	   Average Marks
+Krish  	           89.00
+Rahul	           78.50
+Priya	           95.00
+
+Real-Life Use
+Queries like this are commonly used in:
+•	School and college management systems 
+•	University result portals 
+•	ERP software 
+•	HR performance reports 
+•	Sales and business analytics 
+
+For example, instead of calculating each student's average marks manually, the database performs the calculation instantly using JOIN, AVG(), and GROUP BY
