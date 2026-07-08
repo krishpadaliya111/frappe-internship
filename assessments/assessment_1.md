@@ -15,6 +15,7 @@ Dictionary (dict)
 Set (set)
 
 Example:
+
 numbers = [10, 20, 30]
 
 numbers.append(40)
@@ -40,6 +41,7 @@ Tuple (tuple)
 Boolean (bool)
 
 Example:
+
 name = "abc"
 
 name = name + " def"
@@ -90,7 +92,8 @@ Decorators are written using the @ symbol.
 
 One commonly used decorator is @property, which allows a method to be accessed like an attribute.
 
-Example
+Example:
+
 class Student:
 
     def __init__(self, name):
@@ -100,9 +103,7 @@ class Student:
     def name(self):
         return self._name
 
-
 student = Student("abc")
-
 print(student.name)
 
 Output:
@@ -123,16 +124,14 @@ The __init__() method is a special method in Python known as the constructor. It
 
 Its main purpose is to initialize the object's attributes with the values provided during object creation.
 
-Example
+Example:
+
 class Student:
 
     def __init__(self, name, age):
         self.name = name
         self.age = age
-
-
 student = Student("abc", 21)
-
 print(student.name)
 print(student.age)
 
@@ -159,10 +158,9 @@ Lists use square brackets [].
 Use a list when you need to add, remove, or modify items.
 
 Example:
+
 fruits = ["Apple", "Banana", "Mango"]
-
 fruits.append("Orange")
-
 print(fruits)
 
 Output:
@@ -177,7 +175,6 @@ Use a tuple when the data should remain constant.
 Example:
 
 colors = ("Red", "Green", "Blue")
-
 print(colors)
 
 Output:
@@ -198,10 +195,9 @@ Can be reassigned.
 Function-scoped.
 
 Example:
+
 var name = "abc";
-
 name = "defg";
-
 console.log(name);
 
 Output:
@@ -215,10 +211,9 @@ Can be reassigned.
 Block-scoped.
 
 Example:
+
 let age = 20;
-
 age = 21;
-
 console.log(age);
 
 Output:
@@ -233,7 +228,6 @@ Must be initialized when declared.
 Example:
 
 const country = "India";
-
 console.log(country);
 
 Output:
@@ -248,7 +242,6 @@ Answer:
 (a) for Loop
 
 print("Even numbers from 1 to 10:")
-
 for i in range(2, 11, 2):
     print(i)
 
@@ -267,7 +260,6 @@ number = 1
 while number < 100:
     print(number)
     number = number * 2
-
 print(number)
 
 Output:
