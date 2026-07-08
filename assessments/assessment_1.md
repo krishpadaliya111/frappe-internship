@@ -104,6 +104,7 @@ class Student:
         return self._name
 
 student = Student("abc")
+
 print(student.name)
 
 Output:
@@ -132,7 +133,9 @@ class Student:
         self.name = name
         self.age = age
 student = Student("abc", 21)
+
 print(student.name)
+
 print(student.age)
 
 Output:
@@ -160,7 +163,9 @@ Use a list when you need to add, remove, or modify items.
 Example:
 
 fruits = ["Apple", "Banana", "Mango"]
+
 fruits.append("Orange")
+
 print(fruits)
 
 Output:
@@ -175,6 +180,7 @@ Use a tuple when the data should remain constant.
 Example:
 
 colors = ("Red", "Green", "Blue")
+
 print(colors)
 
 Output:
@@ -197,7 +203,9 @@ Function-scoped.
 Example:
 
 var name = "abc";
+
 name = "defg";
+
 console.log(name);
 
 Output:
@@ -213,7 +221,9 @@ Block-scoped.
 Example:
 
 let age = 20;
+
 age = 21;
+
 console.log(age);
 
 Output:
@@ -228,6 +238,7 @@ Must be initialized when declared.
 Example:
 
 const country = "India";
+
 console.log(country);
 
 Output:
@@ -242,7 +253,9 @@ Answer:
 (a) for Loop
 
 print("Even numbers from 1 to 10:")
+
 for i in range(2, 11, 2):
+
     print(i)
 
 Output:
@@ -255,11 +268,15 @@ Even numbers from 1 to 10:
 10
 
 (b) while Loop
+
 number = 1
 
 while number < 100:
+   
     print(number)
+   
     number = number * 2
+
 print(number)
 
 Output:
@@ -293,13 +310,21 @@ Answer: Question 8,9 are not assigned in task.
 Answer:
 
 SELECT
+   
     students.student_name,
+   
     AVG(marks.marks) AS average_marks
+
 FROM marks
+
 JOIN students
+
 ON students.student_id = marks.student_id
+
 JOIN subjects
+
 ON subjects.subject_id = marks.subject_id
+
 GROUP BY students.student_name;
 
 
@@ -315,5 +340,7 @@ Sample Output:
 Explanation:
 
 JOIN combines data from the students, subjects, and marks tables.
+
 AVG() calculates the average marks for each student.
+
 GROUP BY groups the records by student name so the average is calculated separately for each student.
