@@ -187,7 +187,8 @@ Output:
 
 
 6. Explain var vs let vs const in JavaScript with examples.
-Answer
+
+Answer:
 
 In JavaScript, var, let, and const are used to declare variables.
 
@@ -290,6 +291,7 @@ The loop stops when the number becomes 100 or greater.
 
 8. Document each step you took to install Frappe bench, including issues and fixes.
 9. Show output of `bench start` and `bench new-site` (screenshot) and explain what each did.
+
 Answer: Question 8,9 are not assigned in task.
 
 
