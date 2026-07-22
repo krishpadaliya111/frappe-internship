@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Field:student_id",
+ "creation": "2026-07-14 15:03:39.356826",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "student_id",
+  "student_name",
+  "department",
+  "gender",
+  "dob",
+  "grade",
+  "enrollment_date",
+  "phone",
+  "email",
+  "status",
+  "notes",
+  "percent",
+  "subjects"
+ ],
+ "fields": [
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Student Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "Student Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DOB"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "student_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Student ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subjects",
+   "fieldtype": "Table",
+   "label": "Subjects",
+   "options": "Student Subject"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Select",
+   "label": "Grade",
+   "options": "A\nB\nC\nD\nE\nF",
+   "reqd": 1
+  },
+  {
+   "fieldname": "enrollment_date",
+   "fieldtype": "Date",
+   "label": "Enrollment date"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive\nGraduated"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "percent",
+   "fieldtype": "Percent",
+   "label": "Percentage"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-20 12:29:54.136513",
+ "modified_by": "Administrator",
+ "module": "Student Management",
+ "name": "Student",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Student Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

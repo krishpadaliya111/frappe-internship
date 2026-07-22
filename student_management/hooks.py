@@ -228,6 +228,21 @@ app_license = "mit"
 # 	}
 # ]
 
+# Fixtures
+# --------
+fixtures = [
+    {
+      "dt": "DocType",
+      "filters": [
+          [
+            "module",
+            "=",
+            "Student Management"
+          ] 
+       ]
+    }
+]
+
 # Authentication and authorization
 # --------------------------------
 

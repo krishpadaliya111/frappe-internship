@@ -1,0 +1,9 @@
+# Copyright (c) 2026, Krish Padaliya and Contributors
+# See license.txt
+
+# import frappe
+from frappe.tests.utils import FrappeTestCase
+
+
+class TestStudentDepartment(FrappeTestCase):
+	pass

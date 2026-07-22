@@ -1,0 +1,8 @@
+// Copyright (c) 2026, Krish Padaliya and contributors
+// For license information, please see license.txt
+
+// frappe.ui.form.on("Student Field Based", {
+// 	refresh(frm) {
+
+// 	},
+// });
