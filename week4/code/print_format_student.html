@@ -1,0 +1,36 @@
+<div class="print-format">
+    <h2>Student Report Card</h2>
+    <table style="width:100%; border-collapse: collapse; margin-bottom: 15px;">
+        <tr>
+            <td><b>Name:</b> {{ doc.student_name }}</td>
+            <td><b>Department:</b> {{ doc.department }}</td>
+        </tr>
+        <tr>
+            <td><b>Marks Obtained:</b> {{ doc.total_marks }}</td>
+            <td><b>Max Marks:</b> {{ doc.maximum_marks }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>Percentage:</b> {{ "%.2f"|format(doc.percentage) }}%</td>
+        </tr>
+    </table>
+
+    {% if doc.percentage >= 40 %}
+        <p style="color:green; margin-bottom: 20px;">Status: PASS</p>
+    {% else %}
+        <p style="color:red; margin-bottom: 20px;">Status: FAIL</p>
+    {% endif %}
+
+    <h4>Subject-wise Marks</h4>
+    <table style="width:100%; border-collapse: collapse;" border="1">
+        <tr>
+            <th>Subject</th><th>Marks</th><th>Grade</th>
+        </tr>
+        {% for row in doc.subjects %}
+        <tr>
+            <td>{{ row.subject_name }}</td>
+            <td>{{ row.marks }}</td>
+            <td>{{ row.grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
