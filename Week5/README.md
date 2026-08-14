@@ -1,6 +1,4 @@
 # Week 5 — Controllers, Hooks, Scheduler & the ORM
-Phase 2: The server-side toolkit that real customisation is built on.
-
 ---
 
 ## Day 1 — Controllers & the Document API
@@ -123,26 +121,6 @@ Tested manually (without waiting for the real daily trigger) with:
 ```bash
 bench --site site1.local execute student_management.api.mark_overdue_loans
 ```
-
----
-
-## AI-assist notes (per Week 5 guidelines)
-- A free AI assistant was used to help draft the Customer Group Count logic
-  and the overdue-loans scheduler job. Every line was traced and understood
-  on the bench before committing (see explanations above — e.g. why `+1` is
-  needed in the count, why `pluck="name"` is used, why `db.set_value` instead
-  of `doc.save()` for the bulk status update).
-- Unit test ideas written for the Student `validate()` percentage/status logic:
-  - Boundary case: percentage exactly 33 → should be "Pass," not "Failed"
-  - Boundary case: percentage exactly 50 → should be "Pass," not "Excellent"
-  - Percentage 32.99 → "Failed"
-  - Percentage 50.01 → "Excellent"
-  - Blank/zero marks → no divide-by-zero error
-  - Re-saving an unchanged record → status stays consistent
-- Deprecated/non-existent API check: none found. All APIs used
-  (`frappe.get_all`, `frappe.db.set_value`, `frappe.db.count`,
-  `frappe.db.commit`, `frappe.utils.nowdate`, `frappe.utils.add_days`) are
-  current, documented Frappe APIs.
 
 ---
 
